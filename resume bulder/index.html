@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder</title>
+</head>
+
+<body>
+
+    <!--resume form-->
+
+    <div class="container background" id="resume-form">
+        <h1 class="text-center my-2">Resume Builder</h1>
+        <p class="text-center"> By Ladu Lal Bhil</p>
+
+        <div class="row">
+
+            <div class="col-6">
+                <h3> Information</h3>
+                <!--- Name-->
+                <div class="form-group">
+                    <label for="nameField">Name: </label>
+                    <input type="text" class="form-control" id="nameField" placeholder="Enter" />
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="contField">Contact Number: </label>
+                    <input type="text" class="form-control" id="contField" placeholder="Enter" />
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="emailField">E-Mail Address : </label>
+                    <input type="email" class="form-control" id="emailField" placeholder="Enter" />
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="paddrField">Parmanent Address: </label>
+                    <textarea class="form-control" id="paddrField" placeholder="Enter"></textarea>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="caddrField">Current Address: </label>
+                    <textarea class="form-control" id="caddrField" placeholder="Enter"></textarea>
+                </div>
+
+                <p class="text-secondary; mt-4">Importent Links</p>
+                <div class="form-group mt-2">
+                    <label for="linkdinField">Linkdin: </label>
+                    <input type="url" class="form-control" id="linkdinField" placeholder="Enter" />
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="githubField">Github: </label>
+                    <input type="url" class="form-control" id="githubField" placeholder="Enter" />
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <h3>Professional Information</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective: </label>
+                    <textarea id="objField" class="form-control" placeholder="Enter"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="edu">
+                    <label for="">Education Qualification: </label>
+                    <textarea class="form-control eduField" placeholder="Enter"></textarea>
+
+                    <div class="container text-center mt-2" id="eduAddButton">
+                        <button onclick="addEduField()" class="btn btn-primary btn-small">Add More</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience: </label>
+                    <textarea class="form-control weField" placeholder="Enter"></textarea>
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-small">Add More</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="skill">
+                    <label for="">Expertise: </label>
+                    <textarea class="form-control skillField" placeholder="Enter"></textarea>
+
+                    <div class="container text-center mt-2" id="skillAddButton">
+                        <button onclick="addSkillField()" class="btn btn-primary btn-small">Add More</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <button onclick="generateResume()" class="btn btn-primary btn-lg">
+                Generate
+            </button>
+        </div>
+    </div>
+
+
+    <!--resume template-->
+
+    <div class="container" id="resume-template">
+        <div class="row">
+            <!--first col-->
+            <div class="col-4 text-center text-type" style="background-color: rgb(241, 225, 143)";>
+                <img src="OIP.jpg" alt="profile image" class="img-fluid mt-2 ">
+
+                <div class="container">
+                    <p id="nameTemp1">Sakti kumar</p>
+                    <p id="contTemp">+919784521460,+918748844564,+917848576214</p>
+                    <p id="emailTemp">xyz.123@gmail.com</p>
+                    <p id="paddrTemp">1/77,vikat47,Jaipur,Rajasthan,India</p>
+                    <p id="caddrTemp">4/32,vikat47,Jaipur,Rajasthan,India</p>
+
+                    <hr>
+                    <p><a id="linkdinTemp" href="#1">https://in.linkdin.com</a></p>
+
+                    <p><a id="gitTemp" href="#1">https://www.github.com</a></p>
+
+                </div>
+            </div>
+
+            <!--second col-->
+            <div class="col-8 py-5">
+
+                <h1 id="nameTemp2" class="text-center" style="font-weight: 700;">
+                    Ram Kumar Sharma
+                </h1>
+
+                <div class="card mt-4 ">
+                    <div class="card-header background-property">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objTemp">Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Voluptate omnis libero
+                            similique, ea nostrum voluptas explicabo
+                            exercitationem odit necessitatibus nemo
+                            laudantium velit perspiciatis illum
+                            laboriosam eaque consequatur quas dolores!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mt-4 ">
+                    <div class="card-header background-property">
+                        <h3>Education Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="eduTemp">
+                            <li>edu1</li>
+                            <li>edu2</li>
+                            <li>edu3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4 ">
+                    <div class="card-header background-property">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="expTemp">
+                            <li>wexpe1</li>
+                            <li>wexpe2</li>
+                            <li>wexpe3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4 ">
+                    <div class="card-header background-property">
+                        <h3>Expertise</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skillTemp">
+                            <li>expertise1</li>
+                            <li>expertise2</li>
+                            <li>expertise3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printResume()" class="btn btn-primary btn-small">
+                        Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
